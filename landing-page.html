@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Portofolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900 font-sans min-h-screen flex flex-col justify-between">
+
+  <!-- Header dengan Garis 3 di Pojok Kanan -->
+  <header class="bg-[#1e293b] text-white px-6 py-4 flex justify-between items-center text-sm relative">
+    <span class="font-semibold text-base">Web kuuu</span>
+    
+    <!-- Menu Teks (Tampil di Layar Sedang/Besar 'md:') -->
+    <nav class="hidden md:flex space-x-4">
+      <a href="#" class="hover:text-gray-300 transition">home</a>
+      <a href="#" class="hover:text-gray-300 transition">about</a>
+      <a href="#" class="hover:text-gray-300 transition">contact</a>
+    </nav>
+
+    <!-- Tombol Garis 3 / Hamburger (Tampil di Layar Kecil) -->
+    <button id="menu-btn" class="md:hidden text-white focus:outline-none p-1">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+    <!-- Dropdown Menu Mobile (Tersembunyi secara Default) -->
+    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#1e293b] flex flex-col p-4 space-y-3 md:hidden border-t border-gray-700 shadow-lg">
+      <a href="#" class="hover:text-gray-300 transition">home</a>
+      <a href="#" class="hover:text-gray-300 transition">about</a>
+      <a href="#" class="hover:text-gray-300 transition">contact</a>
+    </div>
+  </header>
+
+  <!-- Content / Konten Utama -->
+  <main class="max-w-6xl mx-auto px-4 py-12 text-center flex-grow w-full">
+    
+    <!-- Hero Text -->
+    <h1 class="text-3xl font-bold mb-2">Selamat Datang di webb kuu</h1>
+    <p class="text-gray-600 mb-10">Ini adalah halaman landing sederhana menggunakan Tailwind CSS.</p>
+
+    <!-- Form & Fitur wrapper agar tombol kirim terhubung secara valid -->
+    <form id="main-form" class="w-full">
+      
+      <!-- 3 Kotak Fitur (Bisa Ditekan) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        
+        <!-- Kotak Fitur 1 (Dapat Ditekan) -->
+        <a href="#fitur1" class="block border border-gray-200 rounded-xl p-10 min-h-[220px] flex flex-col justify-center shadow-sm hover:shadow-xl hover:border-blue-500 hover:-translate-y-1 transition-all duration-200 cursor-pointer group">
+          <h2 class="font-bold text-2xl mb-3 group-hover:text-blue-600">Fitur 1</h2>
+          <p class="text-gray-600 text-base">Deskripsi singkat fitur 1.</p>
+        </a>
+
+        <!-- Kotak Fitur 2 (Dapat Ditekan) -->
+        <a href="#fitur2" class="block border border-gray-200 rounded-xl p-10 min-h-[220px] flex flex-col justify-center shadow-sm hover:shadow-xl hover:border-blue-500 hover:-translate-y-1 transition-all duration-200 cursor-pointer group">
+          <h2 class="font-bold text-2xl mb-3 group-hover:text-blue-600">Fitur 2</h2>
+          <p class="text-gray-600 text-base">Deskripsi singkat fitur 2.</p>
+        </a>
+
+        <!-- Kotak Fitur 3 (Dapat Ditekan) -->
+        <a href="#fitur3" class="block border border-gray-200 rounded-xl p-10 min-h-[220px] flex flex-col justify-center shadow-sm hover:shadow-xl hover:border-blue-500 hover:-translate-y-1 transition-all duration-200 cursor-pointer group">
+          <h2 class="font-bold text-2xl mb-3 group-hover:text-blue-600">Fitur 3</h2>
+          <p class="text-gray-600 text-base">Deskripsi singkat fitur 3.</p>
+        </a>
+
+      </div>
+
+      <!-- Input Kontak -->
+      <div class="max-w-lg mx-auto text-left space-y-4 mb-8">
+        <input type="text" placeholder="Nama Lengkap" class="w-full p-3 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        <textarea rows="4" placeholder="Pesan Anda..." class="w-full p-3 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+      </div>
+
+      <!-- Tombol Kirim Biru Selebar Layar -->
+      <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 text-center transition cursor-pointer">
+        Kirim
+      </button>
+
+    </form>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-4 text-center text-xs text-gray-500 border-t">
+    &copy; Mochammad Kevin Irwansyah. hak ciptakuu ini
+  </footer>
+
+  <!-- Script Sederhana untuk Buka/Tutup Menu Garis 3 -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
